@@ -3,8 +3,6 @@
 
 #include <Arduino.h>
 
-const unsigned char UBXGPS_HEADER[] = {0xB5, 0x62};
-
 template <class T = HardwareSerial>
 class UbxGps
 {
@@ -99,6 +97,7 @@ protected:
   void setLength(unsigned char length)
   {
     this->size = length + this->offsetHeaders;
+    offsetClassProperties = (sizeof(*this) - sizeof(this));
   };
 
 private:
@@ -113,7 +112,7 @@ private:
   };
 
   void calculateChecksum()
-  {
+  {    
     memset(this->checksum, 0, 2);
 
     for (int i = 0; i < this->size; i++)
@@ -123,6 +122,7 @@ private:
     }
   };
 
+  const unsigned char UBXGPS_HEADER[2] = {0xB5, 0x62};
   // Class properties.
   T &serial;
   unsigned char offsetClassProperties = 8;
