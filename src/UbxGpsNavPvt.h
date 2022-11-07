@@ -65,8 +65,8 @@ public:
 
     UbxGpsNavPvt(T &serial) : UbxGps<T>(serial)
     {
-        this->setLength(92 /*Payload*/);
-    };
+        this->setLength(92 /*Nr.of Bytes Payload*/);
+    };    
 };
 
 #endif

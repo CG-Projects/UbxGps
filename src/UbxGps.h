@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-template <class T = HardwareSerial>
+template <class T>
 class UbxGps
 {
 public:
@@ -89,6 +89,11 @@ public:
   };
 
 protected:
+  UbxGps()
+  {
+    this->carriagePosition = 0;
+  };
+
   UbxGps(T &serial) : serial(serial)
   {
     this->carriagePosition = 0;
