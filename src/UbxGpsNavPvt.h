@@ -63,10 +63,11 @@ public:
     uint16_t /*90*/ magAcc;     // deg      Magnetic declination accuracy
     //------------------------------------- FLAGS -----------------------------
 
-    UbxGpsNavPvt(T &serial) : UbxGps<T>(serial)
-    {
+    UbxGpsNavPvt(T &ser) : UbxGps<T>(ser)
+    { 
+        // Serial.println("UbxGPSNavPvt - INIT!!!!");                  
         this->setLength(92 /*Nr.of Bytes Payload*/);
-    };    
+    };
 };
 
 #endif
