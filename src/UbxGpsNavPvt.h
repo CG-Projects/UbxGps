@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef UBXGPSNAVPVT_H_
 #define UBXGPSNAVPVT_H_
 

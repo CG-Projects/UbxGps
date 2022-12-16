@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef UBXGPS_H_
 #define UBXGPS_H_
 
