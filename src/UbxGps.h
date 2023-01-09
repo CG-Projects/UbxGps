@@ -11,13 +11,13 @@ class UbxGps
 public:
     void begin(long speed)
     {
-        return this->serial.begin(speed);
+        return this->serial.begin(speed);        
     };
 
     boolean ready()
     {
         unsigned char p = this->carriagePosition;
-
+            
         while (this->available())
         {
             byte c = this->read();
@@ -94,7 +94,7 @@ protected:
     UbxGps(T &serial) : serial(serial)
     {
         // Serial.println("UbxGPS - INIT!!!!");
-        this->carriagePosition = 0;
+        this->carriagePosition = 0;        
     };
 
     void setLength(unsigned char length)

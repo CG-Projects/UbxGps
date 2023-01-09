@@ -67,7 +67,8 @@ public:
 
     UbxGpsNavPvt(T &ser) : UbxGps<T>(ser)
     { 
-        // Serial.println("UbxGPSNavPvt - INIT!!!!");                  
+        // Serial.println("UbxGPSNavPvt - INIT!!!!");  
+        this->begin(BAUD);
         this->setLength(92 /*Nr.of Bytes Payload*/);
     };
 };
